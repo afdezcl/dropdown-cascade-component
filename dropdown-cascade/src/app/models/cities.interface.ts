@@ -1,10 +1,12 @@
 export interface ProvinceI {
-    id: number;
+    id: string;
     name: string;
 }
 
 export interface CityI {
-    id: number;
-    provinceId: number;
+    id: string;
+    provinceId: string;
+    cmun: string;
+    dc: string;
     name: string;
 }
