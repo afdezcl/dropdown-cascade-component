@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesService } from 'src/app/services/cities.service';
-import {ProvinceI, CityI} from '../../models/cities.interface';
+import { ProvinceI, CityI } from '../../models/cities.interface';
 
 @Component({
   selector: 'app-dropdown',
@@ -10,11 +10,17 @@ import {ProvinceI, CityI} from '../../models/cities.interface';
 })
 export class DropdownComponent implements OnInit {
 
+  public provinces: ProvinceI[];
+  public cities: CityI[];
+
   constructor(private citiesService: CitiesService) { }
 
   ngOnInit() {
-    console.log(this.citiesService.getProvinces());
-    console.log(this.citiesService.getCities());
+    this.provinces = this.citiesService.getProvinces();
+  }
+
+  onChange(id: number): void {    
+    this.cities = this.citiesService.getCities().filter(item => item.provinceId == id);    
   }
 
 }
