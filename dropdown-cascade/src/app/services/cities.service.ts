@@ -9,14 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class CitiesService {
 
-  private urlProvinces = 'https://drive.google.com/open?id=1YmutenGF_YKubJEbuNhAGQSfVS4wrvg-';
+  private urlProvinces = 'assets/provinces.json';
 
   constructor(private _http: HttpClient) { }
 
-  getProvinces(): Observable<ProvinceI> {
-    console.log(this._http.get<ProvinceI>(this.urlProvinces).pipe(map(results => results['Provinces'])));
-    
-   return this._http.get<ProvinceI>(this.urlProvinces).pipe(map(results => results['Provinces']));
+  getProvinces(){    
+    return this._http.get<ProvinceI>(this.urlProvinces);
   }
 /*
   getCities(): CityI[]{

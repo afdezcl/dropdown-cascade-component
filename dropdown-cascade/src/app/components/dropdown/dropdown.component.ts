@@ -12,14 +12,14 @@ import { Observable } from 'rxjs';
 export class DropdownComponent implements OnInit {
 
   public selectedProvince: ProvinceI = { id: '0', name: '' };
-  public provinces: Observable<ProvinceI>;
-  public cities: CityI[];
+  public provinces: Observable<ProvinceI[]>;
+  public cities: CityI[];  
 
   constructor(private _citiesService: CitiesService) { }
 
   ngOnInit() {
-    this.provinces = this._citiesService.getProvinces();
-    console.log("Hola : " + this.provinces); 
+    this._citiesService.getProvinces().subscribe();
+      
   }
 
   onChange(id: number): void {    
