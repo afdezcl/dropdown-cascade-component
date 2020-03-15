@@ -1,7 +1,7 @@
-<div class="container mt-5">
+<div class="container mt-5 col-md-4">
   <div class="form-group">
     <label for="provinces">Provincia</label>
-    <select class="form-control" (change)="onChange($event.target.value)">
+    <select class="form-control" [(ngModel)]="selectedProvince.id" (change)="onChange($event.target.value)">
       <option *ngFor="let province of provinces" value="{{province.id}}">{{province.name}}</option>
     </select>
   </div>

@@ -10,6 +10,7 @@ import { ProvinceI, CityI } from '../../models/cities.interface';
 })
 export class DropdownComponent implements OnInit {
 
+  public selectedProvince: ProvinceI = { id: 0, name: '' };
   public provinces: ProvinceI[];
   public cities: CityI[];
 
