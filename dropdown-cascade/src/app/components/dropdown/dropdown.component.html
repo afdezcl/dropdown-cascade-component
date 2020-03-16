@@ -9,7 +9,7 @@
   <div class="form-group">
     <label for="provinces">Ciudad</label>
     <select class="form-control">
-      <option *ngFor="let city of cities" value="{{city.id}}">{{city.name}}</option>
+      <option *ngFor="let city of cities" value="{{city?.id}}">{{city?.name}}</option>
     </select>
   </div>
 </div>

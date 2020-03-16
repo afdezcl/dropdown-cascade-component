@@ -12,18 +12,31 @@ import { Observable } from 'rxjs';
 export class DropdownComponent implements OnInit {
 
   public selectedProvince: ProvinceI = { id: '0', name: '' };
-  public provinces: Observable<ProvinceI[]>;
+  public provinces: ProvinceI[];
   public cities: CityI[];  
 
   constructor(private _citiesService: CitiesService) { }
 
   ngOnInit() {
-    this._citiesService.getProvinces().subscribe();
+    this._citiesService.getProvinces().subscribe(
+      data => {
+        console.log(data);
+        this.provinces = data;
+      }
+    );
       
   }
 
-  onChange(id: number): void {    
-   // this.cities = this.citiesService.getCities().filter(item => item.provinceId == id);    
+  onChange(id: string): void {    
+    this._citiesService.getCities().subscribe(data => {
+      //console.log(data);
+      this.cities = data.filter(item => item.provinceId === id);      
+      console.log(this.cities);
+    
+    });
+
+    //this.cities = this._citiesService.getCities().filter(item => item.provinceId === id);
+
   }
 
 }

@@ -9,16 +9,17 @@ import { map } from 'rxjs/operators';
 })
 export class CitiesService {
 
-  private urlProvinces = 'assets/provinces.json';
-
+  private urlProvinces = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/provinces2.json?token=AEKUIDLWC27SRRWHHMAU3OK6O73FG';
+  private urlCities = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/cities.json?token=AEKUIDOGFAQX2HE6LIMZVCK6O74EA';
+  
   constructor(private _http: HttpClient) { }
 
-  getProvinces(){    
-    return this._http.get<ProvinceI>(this.urlProvinces);
+  getProvinces(): Observable<ProvinceI[]>{    
+    return this._http.get<ProvinceI[]>(this.urlProvinces);
   }
-/*
-  getCities(): CityI[]{
-    return this.cities;
+
+  getCities(): Observable<CityI[]>{
+    return this._http.get<CityI[]>(this.urlCities);
   }
-*/
+
 }
