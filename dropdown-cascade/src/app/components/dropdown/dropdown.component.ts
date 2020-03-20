@@ -29,14 +29,8 @@ export class DropdownComponent implements OnInit {
 
   onChange(id: string): void {    
     this._citiesService.getCities().subscribe(data => {
-      //console.log(data);
-      this.cities = data.filter(item => item.provinceId === id);      
-      console.log(this.cities);
-    
-    });
-
-    //this.cities = this._citiesService.getCities().filter(item => item.provinceId === id);
-
+      this.cities = data.filter(item => item.provinceId === id);              
+    });    
   }
 
 }

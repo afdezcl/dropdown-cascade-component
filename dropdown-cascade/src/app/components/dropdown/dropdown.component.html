@@ -1,14 +1,14 @@
-<div class="container mt-5 col-md-4">
-  <div class="form-group">
-    <label for="provinces">Provincia</label>
-    <select class="form-control" [(ngModel)]="selectedProvince.id" (change)="onChange($event.target.value)">
+<div class="row">
+  <div class="col-sm mt-3">    
+    <select class="custom-select" [(ngModel)]="selectedProvince.id" (change)="onChange($event.target.value)">
+      <option hidden selected>Provincia</option>
       <option *ngFor="let province of provinces" value="{{province.id}}">{{province.name}}</option>
     </select>
   </div>
 
-  <div class="form-group">
-    <label for="provinces">Ciudad</label>
-    <select class="form-control">
+  <div class="col-sm mt-3">
+    <select class="custom-select">
+      <option hidden selected>Ciudad</option>
       <option *ngFor="let city of cities" value="{{city?.id}}">{{city?.name}}</option>
     </select>
   </div>
