@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class CitiesService {
 
-  private urlProvinces = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/provinces2.json?token=AEKUIDLWC27SRRWHHMAU3OK6O73FG';
-  private urlCities = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/cities.json?token=AEKUIDOGFAQX2HE6LIMZVCK6O74EA';
+  private urlProvinces = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/provinces.json';
+  private urlCities = 'https://raw.githubusercontent.com/afdezcl/dropdown-cascade-component/master/data/cities.json';
   
   constructor(private _http: HttpClient) { }
 
